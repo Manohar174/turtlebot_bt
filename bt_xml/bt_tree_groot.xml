@@ -1,0 +1,27 @@
+<root main_tree_to_execute="MainTree">
+    <BehaviorTree ID="MainTree">
+        <ReactiveSequence>
+            <Condition ID="CheckLayDown"/>
+            <Decorator ID="Repeat" num_cycles="-1">
+                <Sequence>
+                    <Action ID="Use_nav2" goal_x="3.011561393737793" goal_y="5.241028785705566" goal_z="0.0"/>
+                    <Action ID="Wait" inp_sec="5.0"/>
+                    <Action ID="Use_nav2" goal_x="10.716005325317383" goal_y="3.601515531539917" goal_z="0.0"/>
+                    <Action ID="Wait" inp_sec="2.0"/>
+                </Sequence>
+            </Decorator>
+        </ReactiveSequence>
+    </BehaviorTree>
+    <TreeNodesModel>
+        <Action ID="Wait">
+            <inout_port name="inp_sec"/>
+        </Action>
+        <Action ID="Use_nav2">
+            <inout_port name="goal_x"/>
+            <inout_port name="goal_y"/>
+            <inout_port name="goal_z"/>
+        </Action>
+        <Condition ID="CheckLayDown"/>
+    </TreeNodesModel>
+</root>
+
